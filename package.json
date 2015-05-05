@@ -1,6 +1,6 @@
 {
   "name": "http-status-code",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
   "license": "MIT",
   "devDependencies": {
     "code": "^1.4.0",
+    "coveralls": "^2.11.2",
     "lab": "^5.8.0",
     "plato": "^1.4.0"
   },
