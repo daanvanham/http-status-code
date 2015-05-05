@@ -1,0 +1,11 @@
+//  Upgrading to TLS Within HTTP/1.1 (Updates: #2616)
+//  http://tools.ietf.org/html/rfc2817
+
+{
+	// 4xx - Client Error
+
+	// Reliable, interoperable negotiation of Upgrade features requires an unambiguous failure signal.
+	// The 426 Upgrade Required status code allows a server to definitively state the precise protocol
+	// extensions a given resource must be served with.
+	"426": "Upgrade Required"
+}

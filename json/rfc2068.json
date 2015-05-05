@@ -1,0 +1,153 @@
+//  Hypertext Transfer Protocol -- HTTP/1.1 (Obsoletes #1945)
+//  http://tools.ietf.org/html/rfc2068
+
+{
+	// 1xx - Informational
+
+	// The client may continue with its request. This interim response is used to inform the client that the
+	// initial part of the request has been received and has not yet been rejected by the server. The client
+	// SHOULD continue by sending the remainder of the request or, if the request has already been completed,
+	// ignore this response. The server MUST send a final response after the request has been completed.
+	"100": "Continue",
+
+	// The server understands and is willing to comply with the client's request, via the Upgrade message
+	// header field, for a change in the application protocol being used on this connection. The server will
+	// switch protocols to those defined by the response's Upgrade header field immediately after the empty
+	// line which terminates the 101 response.
+	"101": "Switching Protocols",
+
+
+	// 2xx - Successful
+
+	// The returned metainformation in the entity-header is not the definitive set as available from the
+	// origin server, but is gathered from a local or a third-party copy. The set presented MAY be a subset or
+	// superset of the original version. For example, including local annotation information about the
+	// resource MAY result in a superset of the metainformation known by the origin server. Use of this
+	// response code is not required and is only appropriate when the response would otherwise be 200 (OK).
+	"203": "Non-Authoritative Information",
+
+	// The server has fulfilled the request and the user agent SHOULD reset the document view which caused
+	// the request to be sent. This response is primarily intended to allow input for actions to take place
+	// via user input, followed by a clearing of the form in which the input is given so that the user can
+	// easily initiate another input action. The response MUST NOT include an entity.
+	"205": "Reset Content",
+
+	// The server has fulfilled the partial GET request for the resource.
+	// The request must have included a Range header field indicating the desired range. The response MUST
+	// include either a Content-Range header field indicating the range included with this response, or a
+	// multipart/byteranges Content-Type including Content-Range fields for each part. If multipart/byteranges
+	// is not used, the Content-Length header field in the response MUST match the actual number of OCTETs
+	// transmitted in the message-body.
+	// A cache that does not support the Range and Content-Range headers MUST NOT cache 206 (Partial)
+	// responses.
+	"206": "Partial Content",
+
+
+	// 3xx - Redirection
+
+	// The response to the request can be found under a different URI and SHOULD be retrieved using a GET
+	// method on that resource. This method exists primarily to allow the output of a POST-activated script to
+	// redirect the user agent to a selected resource. The new URI is not a substitute reference for the
+	// originally requested resource. The 303 response is not cachable, but the response to the second
+	// (redirected) request MAY be cachable.
+	// If the new URI is a location, its URL SHOULD be given by the Location field in the response. Unless the
+	// request method was HEAD, the entity of the response SHOULD contain a short hypertext note with a
+	// hyperlink to the new URI(s).
+	"303": "See Other",
+
+	// The requested resource MUST be accessed through the proxy given by the Location field. The Location
+	// field gives the URL of the proxy. The recipient is expected to repeat the request via the proxy.
+	"305": "Use Proxy",
+
+
+	// 4xx - Client Error
+
+	// This code is reserved for future use.
+	"402": "Payment Required",
+
+	// The method specified in the Request-Line is not allowed for the resource identified by the Request-URI.
+	// The response MUST include an Allow header containing a list of valid methods for the requested resource.
+	"405": "Method Not Allowed",
+
+	// The resource identified by the request is only capable of generating response entities which have
+	// content characteristics not acceptable according to the accept headers sent in the request.
+	"406": "Not Acceptable",
+
+	// This code is similar to 401 (Unauthorized), but indicates that the client MUST first authenticate
+	// itself with the proxy. The proxy MUST return a Proxy-Authenticate header field containing a challenge
+	// applicable to the proxy for the requested resource. The client MAY repeat the request with a suitable
+	// Proxy-Authorization header field.
+	"407": "Proxy Authentication Required",
+
+	// The client did not produce a request within the time that the server was prepared to wait. The client
+	// MAY repeat the request without modifications at any later time.
+	"408": "Request Timeout",
+
+	// The request could not be completed due to a conflict with the current state of the resource. This code
+	// is only allowed in situations where it is expected that the user might be able to resolve the conflict
+	// and resubmit the request. The response body SHOULD include enough information for the user to recognize
+	// the source of the conflict. Ideally, the response entity would include enough information for the user
+	// or user agent to fix the problem; however, that may not be possible and is not required.
+	// Conflicts are most likely to occur in response to a PUT request. If versioning is being used and the
+	// entity being PUT includes changes to a resource which conflict with those made by an earlier
+	// (third-party) request, the server MAY use the 409 response to indicate that it can't complete the
+	// request. In this case, the response entity SHOULD contain a list of the differences between the two
+	// versions in a format defined by the response Content-Type.
+	"409": "Conflict",
+
+	// The requested resource is no longer available at the server and no forwarding address is known. This
+	// condition SHOULD be considered permanent. Clients with link editing capabilities SHOULD delete
+	// references to the Request-URI after user approval. If the server does not know, or has no facility to
+	// determine, whether or not the condition is permanent, the status code 404 (Not Found) SHOULD be used
+	// instead. This response is cachable unless indicated otherwise.
+	// The 410 response is primarily intended to assist the task of web maintenance by notifying the recipient
+	// that the resource is intentionally unavailable and that the server owners desire that remote links to
+	// that resource be removed. Such an event is common for limited-time, promotional services and for
+	// resources belonging to individuals no longer working at the server's site. It is not necessary to mark
+	// all permanently unavailable resources as "gone" or to keep the mark for any length of time.
+	"410": "Gone",
+
+	// The server refuses to accept the request without a defined Content- Length. The client MAY repeat the
+	// request if it adds a valid Content-Length header field containing the length of the message-body in the
+	// request message.
+	"411": "Length Required",
+
+	// The precondition given in one or more of the request-header fields evaluated to false when it was
+	// tested on the server. This response code allows the client to place preconditions on the current
+	// resource metainformation (header field data) and thus prevent the requested method from being applied
+	// to a resource other than the one intended.
+	"412": "Precondition Failed",
+
+	// The server is refusing to process a request because the request entity is larger than the server is
+	// willing or able to process. The server may close the connection to prevent the client from continuing
+	// the request.
+	// If the condition is temporary, the server SHOULD include a Retry-After header field to indicate that it
+	// is temporary and after what time the client may try again.
+	"413": "Request Entity Too Large",
+
+	// The server is refusing to service the request because the Request-URI is longer than the server is
+	// willing to interpret. This rare condition is only likely to occur when a client has improperly
+	// converted a POST request to a GET request with long query information, when the client has descended
+	// into a URL "black hole" of redirection (e.g., a redirected URL prefix that points to a suffix of
+	// itself), or when the server is under attack by a client attempting to exploit security holes present in
+	// some servers using fixed-length buffers for reading or manipulating the Request-URI.
+	"414": "Request-URI Too Long",
+
+	// The server is refusing to service the request because the entity of the request is in a format not
+	// supported by the requested resource for the requested method.
+	"415": "Unsupported Media Type",
+
+
+	// 5xx - Server Error
+
+	// The server, while acting as a gateway or proxy, did not receive a timely response from the upstream
+	// server it accessed in attempting to complete the request.
+	"504": "Gateway Timeout",
+
+	// The server does not support, or refuses to support, the HTTP protocol version that was used in the
+	// request message. The server is indicating that it is unable or unwilling to complete the request using
+	// the same major version as the client, other than with this error message.
+	// The response SHOULD contain an entity describing why that version is not supported and what other
+	// protocols are supported by that server.
+	"505": "HTTP Version Not Supported"
+}

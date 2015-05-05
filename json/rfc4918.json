@@ -1,0 +1,6 @@
+//  HTTP Extensions for Web Distributed Authoring and Versioning (WebDAV) (Obsoletes #2518, Extends #2616)
+//  http://tools.ietf.org/html/rfc4918
+
+{
+	// this RFC did not add any new status codes
+}
