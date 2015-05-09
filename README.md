@@ -3,8 +3,6 @@
 [![Coverage Status](https://coveralls.io/repos/daanvanham/http-status-code/badge.svg)](https://coveralls.io/r/daanvanham/http-status-code)
 
 # HTTP Status Codes
-Port of [Konsolidate Status](https://github.com/konfirm/konsolidate_hacklang/blob/master/core/status.hh).
-
 Access the status codes you need, with the protocol being used. If no protocol is given, all status codes are used.
 
 ## Install
