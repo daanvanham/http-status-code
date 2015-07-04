@@ -1,0 +1,33 @@
+//  Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content
+//  http://tools.ietf.org/html/7231
+
+{
+	//  3xx  -  Redirection
+
+	//   The 302 (Found) status code indicates that the target resource resides temporarily under a
+	//  different URI. Since the redirection might be altered on occasion, the client ought to continue to
+	//  use the effective request URI for future requests. The server SHOULD generate a Location header
+	//  field in the response containing a URI reference for the different URI. The user agent MAY use the
+	//  Location field value for automatic redirection. The server's response payload usually contains a
+	//  short hypertext note with a hyperlink to the different URI(s). Note: For historical reasons, a user
+	//  agent MAY change the request method from POST to GET for the subsequent request. If this behavior is
+	//  undesired, the 307 (Temporary Redirect) status code can be used instead.
+	"302": "Found",
+
+	//  4xx  -  User Error
+
+	//   The 413 (Payload Too Large) status code indicates that the server is refusing to process a request
+	//  because the request payload is larger than the server is willing or able to process. The server MAY
+	//  close the connection to prevent the client from continuing the request. If the condition is
+	//  temporary, the server SHOULD generate a Retry-After header field to indicate that it is temporary
+	//  and after what time the client MAY try again.
+	"413": "Payload Too Large",
+
+	//   The 414 (URI Too Long) status code indicates that the server is refusing to service the request
+	//  because the request-target is longer than the server is willing to interpret. This rare condition is
+	//  only likely to occur when a client has improperly converted a POST request to a GET request with
+	//  long query information, when the client has descended into a 'black hole' of redirection (e.g., a
+	//  redirected URI prefix that points to a suffix of itself) or when the server is under attack by a
+	//  client attempting to exploit potential security holes.
+	"414": "URI Too Long"
+}

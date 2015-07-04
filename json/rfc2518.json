@@ -1,52 +1,53 @@
-//  HTTP Extensions for Distributed Authoring -- WEBDAV (Extends #2068)
-//  http://tools.ietf.org/html/rfc2518
+//  HTTP Extensions for Distributed Authoring - WEBDAV
+//  http://tools.ietf.org/html/2518
 
 {
-	// 1xx - Informational
+	//  1xx  -  Informational
 
-	// The 102 (Processing) status code is an interim response used to inform the client that the server has
-	// accepted the complete request, but has not yet completed it. This status code SHOULD only be sent when
-	// the server has a reasonable expectation that the request will take significant time to complete. As
-	// guidance, if a method is taking longer than 20 seconds (a reasonable, but arbitrary value) to process
-	// the server SHOULD return a 102 (Processing) response. The server MUST send a final response after the
-	// request has been completed.
-	// Methods can potentially take a long period of time to process, especially methods that support the
-	// Depth header.  In such cases the client may time-out the connection while waiting for a response.
-	// To prevent this the server may return a 102 (Processing) status code to indicate to the client that the
-	// server is still processing the method.
+	//   The 102 (Processing) status code is an interim response used to inform the client that the server
+	//  has accepted the complete request, but has not yet completed it. This status code SHOULD only be
+	//  sent when the server has a reasonable expectation that the request will take significant time to
+	//  complete. As guidance, if a method is taking longer than 20 seconds (a reasonable, but arbitrary
+	//  value) to process the server SHOULD return a 102 (Processing) response. The server MUST send a final
+	//  response after the request has been completed. Methods can potentially take a long period of time to
+	//  process, especially methods that support the Depth header. In such cases the client may time-out the
+	//  connection while waiting for a response. To prevent this the server may return a 102 (Processing)
+	//  status code to indicate to the client that the server is still processing
+	//  the method.
 	"102": "Processing",
 
+	//  2xx  -  Successful
 
-	// 2xx - Successful
-
-	//  The 207 (Multi-Status) status code provides status for multiple independent operations.
+	//   The 207 (Multi-Status) status code provides status for multiple
+	//  independent operations.
 	"207": "Multi-Status",
 
-	// 4xx - Client Error
+	//  4xx  -  User Error
 
-	// The 422 (Unprocessable Entity) status code means the server understands the content type of the request
-	// entity (hence a 415 (Unsupported Media Type) status code is inappropriate), and the syntax of the
-	// request entity is correct (thus a 400 (Bad Request) status code is inappropriate) but was unable to
-	// process the contained instructions.  For example, this error condition may occur if an XML request body
-	// contains well-formed (i.e., syntactically correct), but semantically erroneous XML instructions.
+	//   The 422 (Unprocessable Entity) status code means the server understands the content type of the
+	//  request entity (hence a 415 (Unsupported Media Type) status code is inappropriate), and the syntax
+	//  of the request entity is correct (thus a 400 (Bad Request) status code is inappropriate) but was
+	//  unable to process the contained instructions. For example, this error condition may occur if an XML
+	//  request body contains well-formed (i.e., syntactically correct), but semantically erroneous
+	//  XML instructions.
 	"422": "Unprocessable Entity",
 
-	// The 423 (Locked) status code means the source or destination resource of a method is locked.
+	//   The 423 (Locked) status code means the source or destination resource of a method
+	//  is locked.
 	"423": "Locked",
 
-	// The 424 (Failed Dependency) status code means that the method could not be performed on the resource
-	// because the requested action depended on another action and that action failed.  For example, if a
-	// command in a PROPPATCH method fails then, at minimum, the rest of the commands will also fail with
-	// 424 (Failed Dependency).
+	//   The 424 (Failed Dependency) status code means that the method could not be performed on the
+	//  resource because the requested action depended on another action and that action failed. For
+	//  example, if a command in a PROPPATCH method fails then, at minimum, the rest of the commands will
+	//  also fail with 424 (Failed Dependency).
 	"424": "Failed Dependency",
 
+	//  5xx  -  Server Error
 
-	// 5xx - Server Error
-
-	// The 507 (Insufficient Storage) status code means the method could not be performed on the resource
-	// because the server is unable to store the representation needed to successfully complete the request.
-	// This condition is considered to be temporary. If the request which received this status code was the
-	// result of a user action, the request MUST NOT be repeated until it is requested by a separate user
-	// action.
+	//   The 507 (Insufficient Storage) status code means the method could not be performed on the resource
+	//  because the server is unable to store the representation needed to successfully complete the
+	//  request. This condition is considered to be temporary. If the request which received this status
+	//  code was the result of a user action, the request MUST NOT be repeated until it is requested by a
+	//  separate user action.
 	"507": "Insufficient Storage"
 }

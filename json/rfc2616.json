@@ -1,40 +1,39 @@
-//  Hypertext Transfer Protocol -- HTTP/1.1 (Obsoletes #2068)
-//  http://tools.ietf.org/html/rfc2616
+//  Hypertext Transfer Protocol - HTTP/1.1
+//  http://tools.ietf.org/html/2616
 
 {
-	// 3xx - Redirection
+	//  3xx  -  Redirection
 
-	// The 306 status code was used in a previous version of the specification, is no longer used, and the
-	// code is reserved.
+	//   The 306 status code was used in a previous version of the specification, is no longer used, and the
+	//  code is reserved.
 	"306": "(Unused)",
 
-	// The requested resource resides temporarily under a different URI. Since the redirection MAY be altered
-	// on occasion, the client SHOULD continue to use the Request-URI for future requests.  This response is
-	// only cacheable if indicated by a Cache-Control or Expires header field.
-	// The temporary URI SHOULD be given by the Location field in the response. Unless the request method was
-	// HEAD, the entity of the response SHOULD contain a short hypertext note with a hyperlink to the new
-	// URI(s) , since many pre-HTTP/1.1 user agents do not understand the 307 status. Therefore, the note
-	// SHOULD contain the information necessary for a user to repeat the original request on the new URI.
-	// If the 307 status code is received in response to a request other than GET or HEAD, the user agent
-	// MUST NOT automatically redirect the request unless it can be confirmed by the user, since this might
-	// change the conditions under which the request was issued.
+	//   The requested resource resides temporarily under a different URI. Since the redirection MAY be
+	//  altered on occasion, the client SHOULD continue to use the Request-URI for future requests. This
+	//  response is only cacheable if indicated by a Cache-Control or Expires header field. The temporary
+	//  URI SHOULD be given by the Location field in the response. Unless the request method was HEAD, the
+	//  entity of the response SHOULD contain a short hypertext note with a hyperlink to the new URI(s) ,
+	//  since many pre-HTTP/1.1 user agents do not understand the 307 status. Therefore, the note SHOULD
+	//  contain the information necessary for a user to repeat the original request on the new URI. If the
+	//  307 status code is received in response to a request other than GET or HEAD, the user agent MUST NOT
+	//  automatically redirect the request unless it can be confirmed by the user, since this might change
+	//  the conditions under which the request was issued.
 	"307": "Temporary Redirect",
 
+	//  4xx  -  User Error
 
-	// 4xx - Client Error
-
-	// A server SHOULD return a response with this status code if a request included a Range request-header
-	// field (section 14.35), and none of the range-specifier values in this field overlap the current extent
-	// of the selected resource, and the request did not include an If-Range request-header field.
-	// (For byte-ranges, this means that the first-byte-pos of all of the byte-range-spec values were greater
-	// than the current length of the selected resource.)
-	// When this status code is returned for a byte-range request, the response SHOULD include a Content-Range
-	// entity-header field specifying the current length of the selected resource. This response MUST NOT use
-	// the multipart/byteranges content-type.
+	//   A server SHOULD return a response with this status code if a request included a Range
+	//  request-header field (section 14.35), and none of the range-specifier values in this field overlap
+	//  the current extent of the selected resource, and the request did not include an If-Range
+	//  request-header field. (For byte-ranges, this means that the first-byte-pos of all of the
+	//  byte-range-spec values were greater than the current length of the selected resource.) When this
+	//  status code is returned for a byte-range request, the response SHOULD include a Content-Range
+	//  entity-header field specifying the current length of the selected resource. This response MUST NOT
+	//  use the multipart/byteranges content-type.
 	"416": "Requested Range Not Satisfiable",
 
-	// The expectation given in an Expect request-header field could not be met by this server, or, if the
-	// server is a proxy, the server has unambiguous evidence that the request could not be met by the
-	// next-hop server.
+	//   The expectation given in an Expect request-header field could not be met by this server, or, if the
+	//  server is a proxy, the server has unambiguous evidence that the request could not be met by the
+	//  next-hop server.
 	"417": "Expectation Failed"
 }

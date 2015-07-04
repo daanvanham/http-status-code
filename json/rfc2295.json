@@ -1,0 +1,11 @@
+//  Transparent Content Negotiation in HTTP
+//  http://tools.ietf.org/html/2295
+
+{
+	//  5xx  -  Server Error
+
+	//   The 506 status code indicates that the server has an internal configuration error: the chosen
+	//  variant resource is configured to engage in transparent content negotiation itself, and is therefore
+	//  not a proper end point in the negotiation process.
+	"506": "Variant Also Negotiates"
+}
