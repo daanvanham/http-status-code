@@ -3,7 +3,7 @@
 var Lab = require('lab'),
 	lab = exports.lab = Lab.script(),
 	Code = require('code'),
-	HTTPStatusCode = require('../index'),
+	HTTPStatusCode = require('../lib'),
 	protocols = ['HTTP/1.0', 'HTTP/1.1', 'HTTP/2', 'WEBDAV'],
 	definitions = HTTPStatusCode.getProtocolDefinitions();
 
