@@ -23,10 +23,10 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "code": "^1.4.0",
-    "coveralls": "^2.11.2",
-    "lab": "^5.8.0",
-    "plato": "^1.4.0"
+    "code": "^2.0.1",
+    "coveralls": "^2.11.4",
+    "lab": "^7.3.0",
+    "plato": "^1.5.0"
   },
   "dependencies": {
     "strip-json-comments": "^1.0.2"
