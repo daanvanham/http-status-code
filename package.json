@@ -1,6 +1,6 @@
 {
   "name": "http-status-code",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Easy access to HTTP Status Codes",
   "main": "index.js",
   "keywords": [
