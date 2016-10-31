@@ -1,10 +1,18 @@
 //  Miscellanious Status Codes
 //  https://tools.ietf.org/html/draft-tbray-http-legally-restricted-status-00
+//  https://tools.ietf.org/html/draft-kazuho-early-hints-status-code-00
 
 {
+	//  1xx  -  Informational
+	//  This informational status code indicates the client that the server
+    //  is likely to send a final request with the headers included in the
+    //  informational response.
+	"103": "Early Hints",
+
+
 	//  4xx  -  User Error
 
-	//   This status code indicates that the server is subject to legal restrictions which prevent it
+	//  This status code indicates that the server is subject to legal restrictions which prevent it
 	//  servicing the request. Since such restrictions typically apply to all operators in a legal
 	//  jurisdiction, the server in question may or may not be an origin server. The restrictions typically
 	//  most directly affect the operations of ISPs and search engines. Responses using this status code
