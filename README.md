@@ -219,6 +219,7 @@ console.log(HTTPStatusCode.getMessage(429, 'HTTP/1.1')); // > Too Many Request
 ### Miscellanious
 
 #### Status Codes
+- 103 Early Hints ([misc](https://tools.ietf.org/html/draft-kazuho-early-hints-status-code-00))
 - 418: I'm A Teapot ([RFC2324](http://tools.ietf.org/html/rfc2324))
 - 451: Unavailable For Legal Reasons ([misc](https://tools.ietf.org/html/draft-tbray-http-legally-restricted-status-00))
 - 506: Variant Also Negotiates ([RFC2295](http://tools.ietf.org/html/rfc2295))
